@@ -41,20 +41,20 @@ public class Main {
             r = scanner.nextInt();
             switch (r) {
                 case 1 -> {
-                    System.out.println("Введите Фамилию (Обязательно)");
+                    System.out.print("Введите Фамилию (Обязательно): ");
                     final String surname = scanner.next();
-                    System.out.println("Введите Имя (Обязательно)");
+                    System.out.print("Введите Имя (Обязательно): ");
                     final String name = scanner.next();
-                    System.out.println("Введите Отчество (Обязательно)");
+                    System.out.print("Введите Отчество (Обязательно): ");
                     final String patronymic = scanner.next();
-                    System.out.println("Укажите должность (Обязательно)");
+                    System.out.print("Укажите должность (Обязательно): ");
                     for (final JobTitle value : JobTitle.values()) {
                         System.out.println(String.format("%d. %s", value.ordinal() + 1, value.getStructuralUnitPosition()));
                     }
                     final int jobTitle = scanner.nextInt();
-                    System.out.println("Укажите год начала работы в учреждении (Обязательно)");
+                    System.out.print("Укажите год начала работы в учреждении (Обязательно): ");
                     final int yearWorkStart = scanner.nextInt();
-                    System.out.println("Укажите зарплату");
+                    System.out.print("Укажите зарплату: ");
                     final String salary = scanner.next();
 
                     final Worker newWorker = workerService.createWorker(surname, name, patronymic,jobTitle - 1, yearWorkStart, salary);
@@ -72,19 +72,16 @@ public class Main {
                         exp = scanner.nextInt();
                         switch (exp) {
                             case 1 -> {
-                                System.out.println("1");
                                 System.out.print("Введите значение: ");
                                 int value = scanner.nextInt();
                                 workerService.printExperienceWorkers(workerService.findWorkersExperienceMore(value, workers));
                             }
                             case 2 -> {
-                                System.out.println("2");
                                 System.out.print("Введите значение: ");
                                 int value = scanner.nextInt();
                                 workerService.printExperienceWorkers(workerService.findWorkersExperienceLess(value, workers));
                             }
                             case 3 -> {
-                                System.out.println("3");
                                 System.out.print("Введите значение: ");
                                 int value = scanner.nextInt();
                                 workerService.printExperienceWorkers(workerService.findWorkersExperienceEquals(value, workers));
