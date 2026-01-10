@@ -42,6 +42,7 @@ public final class WorkerUtils {
         System.out.println("1. Добавить нового сотрудника");
         System.out.println("2. Вывести полный список сотрудников");
         System.out.println("3. Фильтр сотрудников по стажу работы");
+        System.out.println("4. Редактировать сведения");
         System.out.println("0. Выход из программы");
         System.out.println("--------------------------------------");
     }
@@ -58,5 +59,28 @@ public final class WorkerUtils {
         System.out.println("3. Равно ***");
         System.out.println("0. Выход из меню");
         System.out.println("--------------------------------------");
+    }
+
+    /**
+     * Печать меню редактирования одного работника
+     * @param worker
+     */
+    public static void printEditWorker(final Worker worker) {
+        System.out.println("--------------------------------------");
+        System.out.println("Редактируемая запись: ");
+        System.out.println(String.format(
+                        "1. Фамилия: %s \n" +
+                        "2. Имя: %s\n" +
+                        "3. Отчество: %s\n" +
+                        "4. Должность: %s\n" +
+                        "5. Год начала работы: %d\n" +
+                        "6. Зарплата: %d",
+                worker.getSurname(),
+                worker.getName(),
+                worker.getPatronymic(),
+                worker.getJobTitle().getStructuralUnitPosition(),
+                worker.getYearWorkStart(),
+                worker.getSalary())
+        );
     }
 }

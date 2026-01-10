@@ -10,32 +10,42 @@ public class Worker {
     /**
      * Фамилия
      */
-    final private String surname;
+    private String surname;
 
     /**
      * Имя
      */
-    final private String name;
+    private String name;
 
     /**
      * Отчество
      */
-    final private String patronymic;
+    private String patronymic;
 
     /**
      * Должность
      */
-    final private JobTitle jobTitle;
+    private JobTitle jobTitle;
 
     /**
      * Год начала работы в учреждении
      */
-    final private Integer yearWorkStart;
+    private Integer yearWorkStart;
 
     /**
      * Зарплата
      */
     private Integer salary;
+
+    public Worker(
+            final String surname,
+            final String name,
+            final String patronymic
+    ) {
+        this.surname = surname;
+        this.name = name;
+        this.patronymic = patronymic;
+    }
 
     public Worker(
             final String surname,
@@ -67,32 +77,52 @@ public class Worker {
         this.salary = salary;
     }
 
-    public void setSalary(final Integer salary) {
-        this.salary = salary;
-    }
-
     public String getSurname() {
         return surname;
+    }
+
+    public void setSurname(final String surname) {
+        this.surname = surname;
     }
 
     public String getName() {
         return name;
     }
 
+    public void setName(final String name) {
+        this.name = name;
+    }
+
     public String getPatronymic() {
         return patronymic;
+    }
+
+    public void setPatronymic(final String patronymic) {
+        this.patronymic = patronymic;
     }
 
     public JobTitle getJobTitle() {
         return jobTitle;
     }
 
+    public void setJobTitle(final JobTitle jobTitle) {
+        this.jobTitle = jobTitle;
+    }
+
     public Integer getYearWorkStart() {
         return yearWorkStart;
     }
 
+    public void setYearWorkStart(final Integer yearWorkStart) {
+        this.yearWorkStart = yearWorkStart;
+    }
+
     public Integer getSalary() {
         return salary;
+    }
+
+    public void setSalary(final Integer salary) {
+        this.salary = salary;
     }
 
     @Override
