@@ -95,11 +95,11 @@ public class WorkerService {
     }
 
     public Worker editWorker(
+            final Scanner scanner,
             final List<Worker> workers,
             int indexWorker,
             int indexWorkerСharacteristic
     ) {
-        final Scanner scanner = new Scanner(System.in);
         final Worker worker = workers.get(indexWorker);
         switch (indexWorkerСharacteristic) {
             case 1 -> {

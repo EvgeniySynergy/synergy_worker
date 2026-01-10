@@ -106,7 +106,7 @@ public class Main {
                     System.out.println("Выберите номер для редактирования");
                     final int indexWorkerСharacteristic = scanner.nextInt();
                     
-                    final Worker newWorker = workerService.editWorker(workers, indexWorker, indexWorkerСharacteristic);
+                    final Worker newWorker = workerService.editWorker(scanner, workers, indexWorker, indexWorkerСharacteristic);
 
                     workers.remove(indexWorker);
                     workers.add(indexWorker, newWorker);
