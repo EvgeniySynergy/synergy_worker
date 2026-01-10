@@ -48,9 +48,7 @@ public class Main {
                     System.out.print("Введите Отчество (Обязательно): ");
                     final String patronymic = scanner.next();
                     System.out.print("Укажите должность (Обязательно): ");
-                    for (final JobTitle value : JobTitle.values()) {
-                        System.out.println(String.format("%d. %s", value.ordinal() + 1, value.getStructuralUnitPosition()));
-                    }
+                    JobTitle.print();
                     final int jobTitle = scanner.nextInt();
                     System.out.print("Укажите год начала работы в учреждении (Обязательно): ");
                     final int yearWorkStart = scanner.nextInt();
@@ -96,6 +94,22 @@ public class Main {
                         }
                         printExperienceFilterMenu();
                     }
+                    printMainMenu();
+                }
+                case 4 -> {
+                    System.out.println("Выберите номер записи для редактирования");
+                    workerService.printWorkers(workers);
+                    System.out.print("Введите значение: ");
+                    final int indexWorker = scanner.nextInt() - 1;
+                    final Worker workerOld = workers.get(indexWorker);
+                    WorkerUtils.printEditWorker(workerOld);
+                    System.out.println("Выберите номер для редактирования");
+                    final int indexWorkerСharacteristic = scanner.nextInt();
+                    
+                    final Worker newWorker = workerService.editWorker(workers, indexWorker, indexWorkerСharacteristic);
+
+                    workers.remove(indexWorker);
+                    workers.add(indexWorker, newWorker);
                     printMainMenu();
                 }
                 case 0 -> {

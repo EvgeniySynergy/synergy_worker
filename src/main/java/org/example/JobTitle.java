@@ -47,6 +47,12 @@ public enum JobTitle {
                 .orElse(UNKNOWN);
     }
 
+    public static void print() {
+        for (final JobTitle value : JobTitle.values()) {
+            System.out.println(String.format("%d. %s", value.ordinal() + 1, value.getStructuralUnitPosition()));
+        }
+    }
+
     private enum StructuralUnit {
         REKTORAT("Ректорат"),
         FACULTY("Факультет"),
