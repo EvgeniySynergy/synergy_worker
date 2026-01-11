@@ -1,5 +1,7 @@
 package org.example;
 
+import java.io.IOException;
+
 public final class WorkerUtils {
     private WorkerUtils() {
         throw new UnsupportedOperationException("Это утилитный класс, нельзя создавать экземпляры");
@@ -82,5 +84,15 @@ public final class WorkerUtils {
                 worker.getYearWorkStart(),
                 worker.getSalary())
         );
+    }
+
+    public static void clearConsole() {
+        try {
+            var clearCommand = System.getProperty("os.name").contains("Windows")
+                    ? new ProcessBuilder("cmd", "/c", "cls")
+                    : new ProcessBuilder("clear");
+            clearCommand.inheritIO().start().waitFor();
+        }
+        catch (IOException | InterruptedException ignored) {}
     }
 }

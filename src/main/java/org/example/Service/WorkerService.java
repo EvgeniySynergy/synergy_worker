@@ -103,24 +103,28 @@ public class WorkerService {
         final Worker worker = workers.get(indexWorker);
         switch (indexWorkerСharacteristic) {
             case 1 -> {
+                WorkerUtils.clearConsole();
                 final String oldSurname = worker.getSurname();
                 System.out.println("Старое значение: " + oldSurname);
                 System.out.print("Введите новое значение: ");
                 worker.setSurname(scanner.next());
             }
             case 2 -> {
+                WorkerUtils.clearConsole();
                 final String oldName = worker.getName();
                 System.out.println("Старое значение: " + oldName);
                 System.out.print("Введите новое значение: ");
                 worker.setName(scanner.next());
             }
             case 3 -> {
+                WorkerUtils.clearConsole();
                 final String oldPatronymic = worker.getPatronymic();
                 System.out.println("Старое значение: " + oldPatronymic);
                 System.out.print("Введите новое значение: ");
                 worker.setPatronymic(scanner.next());
             }
             case 4 -> {
+                WorkerUtils.clearConsole();
                 final JobTitle oldJobTitle = worker.getJobTitle();
                 System.out.println("Старое значение: " + oldJobTitle.getStructuralUnitPosition());
                 System.out.println("Введите новое значение: ");
@@ -128,12 +132,14 @@ public class WorkerService {
                 worker.setJobTitle(JobTitle.getJobTitleByOrdinal(scanner.nextInt() - 1));
             }
             case 5 -> {
+                WorkerUtils.clearConsole();
                 final int oldYearWorkStart = worker.getYearWorkStart();
                 System.out.println("Старое значение: " + oldYearWorkStart);
                 System.out.print("Введите новое значение: ");
                 worker.setYearWorkStart(scanner.nextInt());
             }
             case 6 -> {
+                WorkerUtils.clearConsole();
                 final int oldSalary = worker.getSalary();
                 System.out.println("Старое значение: " + oldSalary);
                 System.out.print("Введите новое значение: ");
