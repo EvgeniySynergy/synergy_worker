@@ -42,16 +42,16 @@ public class Main {
             WorkerUtils.clearConsole();
             switch (r) {
                 case 1 -> {
-                    System.out.print("Введите Фамилию (Обязательно): ");
+                    System.out.print("Введите Фамилию: ");
                     final String surname = scanner.next();
-                    System.out.print("Введите Имя (Обязательно): ");
+                    System.out.print("Введите Имя: ");
                     final String name = scanner.next();
-                    System.out.print("Введите Отчество (Обязательно): ");
+                    System.out.print("Введите Отчество: ");
                     final String patronymic = scanner.next();
-                    System.out.print("Укажите должность (Обязательно): ");
+                    System.out.print("Укажите должность: ");
                     JobTitle.print();
                     final int jobTitle = scanner.nextInt();
-                    System.out.print("Укажите год начала работы в учреждении (Обязательно): ");
+                    System.out.print("Укажите год начала работы в учреждении: ");
                     final int yearWorkStart = scanner.nextInt();
                     System.out.print("Укажите зарплату: ");
                     final String salary = scanner.next();
