@@ -39,6 +39,7 @@ public class Main {
         printMainMenu();
         while (r != 0) {
             r = scanner.nextInt();
+            WorkerUtils.clearConsole();
             switch (r) {
                 case 1 -> {
                     System.out.print("Введите Фамилию (Обязательно): ");
@@ -60,26 +61,31 @@ public class Main {
                     printMainMenu();
                 }
                 case 2 -> {
+                    WorkerUtils.clearConsole();
                     workerService.printWorkers(workers);
                     printMainMenu();
                 }
                 case 3 -> {
+                    WorkerUtils.clearConsole();
                     printExperienceFilterMenu();
                     int exp = -1;
                     while (exp != 0) {
                         exp = scanner.nextInt();
                         switch (exp) {
                             case 1 -> {
+                                WorkerUtils.clearConsole();
                                 System.out.print("Введите значение: ");
                                 int value = scanner.nextInt();
                                 workerService.printExperienceWorkers(workerService.findWorkersExperienceMore(value, workers));
                             }
                             case 2 -> {
+                                WorkerUtils.clearConsole();
                                 System.out.print("Введите значение: ");
                                 int value = scanner.nextInt();
                                 workerService.printExperienceWorkers(workerService.findWorkersExperienceLess(value, workers));
                             }
                             case 3 -> {
+                                WorkerUtils.clearConsole();
                                 System.out.print("Введите значение: ");
                                 int value = scanner.nextInt();
                                 workerService.printExperienceWorkers(workerService.findWorkersExperienceEquals(value, workers));
@@ -97,11 +103,13 @@ public class Main {
                     printMainMenu();
                 }
                 case 4 -> {
+                    WorkerUtils.clearConsole();
                     System.out.println("Выберите номер записи для редактирования");
                     workerService.printWorkers(workers);
                     System.out.print("Введите значение: ");
                     final int indexWorker = scanner.nextInt() - 1;
                     final Worker workerOld = workers.get(indexWorker);
+                    WorkerUtils.clearConsole();
                     WorkerUtils.printEditWorker(workerOld);
                     System.out.println("Выберите номер для редактирования");
                     final int indexWorkerСharacteristic = scanner.nextInt();
@@ -113,6 +121,7 @@ public class Main {
                     printMainMenu();
                 }
                 case 0 -> {
+                    WorkerUtils.clearConsole();
                 }
                 default -> {
                     System.out.println("Выберите пункт меню заново.");
